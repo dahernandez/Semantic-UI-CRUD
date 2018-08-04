@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>WEB EN PUCMM</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.3.1/dist/semantic.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.3.1/dist/semantic.min.js"></script>
+    <script src="scripts.js"></script>
+</head>
+<body>
+
+    <div class="ui container">
+    <h2 style="color:gray; background-color:black;">Todo List</h2>
+
+        <div class="item">
+            <button style="background:#295cd2;" class="positive ui button" onclick="modalRegistro()">Add todo item</button>
+        </div>
+
+        <div class="ui segment">
+            <table class="ui celled table" id="tabla">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Todo item</th>
+                        <th>Created</th>
+                        <th>Completed</th>
+                        <th>Done</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                
+                
+                </tbody>
+            </table>
+        </div>
+
+        <!--Clase del Modal de registro-->
+        <div id="gmm" class="ui modal">
+            <i class="close icon"></i>
+            <div class="header">
+                Add Todo Item
+            </div>
+            
+            <div class="ui segment">
+
+                <div class="ui form">
+                    <div class="two fields">
+                        <div class="field">
+                            <label>Id</label>
+                            <input type="number" placeholder="Id" id="id" required>
+                        </div>
+                        <div class="field">
+                            <label>Todo item</label>
+                            <input type="text" placeholder="Todo item" id="todoitem" required>
+                        </div>
+             
+                    </div>
+
+                    <div class="two fields">
+                        <div class="field">
+                            <label>Created</label>
+                            <input type="date" placeholder="Date" id="created">
+                        </div>
+                    </div>
+         
+
+                </div>
+
+            </div>
+
+            <div class="actions">
+                <button class="positive ui button" onclick="addTodoItem()">
+                    <i class="plus icon"></i>
+                    Agregar</button>
+            </div>
+        </div>
+
+        <div id="mmt" class="ui basic modal">
+            <div class="ui icon header">
+                <i class="american sign language interpreting icon"></i>
+                Esta seguro de borrar este registro?
+            </div>
+            <div class="actions">
+                <div class="ui red basic cancel inverted button">
+                    <i class="remove icon"></i>
+                        No
+                </div>
+                <div class="ui green ok inverted button" onclick="borrarFila()">
+                    <i class="checkmark icon"></i>
+                        Yes
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
